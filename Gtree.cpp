@@ -35,3 +35,17 @@ Node* createGTTree(vector<int>& arr){
 
     return st.top();
 }
+
+void preorder(Node *node){
+    cout<<node->data;
+
+    for(Node *child:node->childs){
+        preorder(child);
+    }
+}
+
+int main(){
+    int [] arr = {10,20,50,-1,60,-1,-1,30,70,-1,80,-1,90,-1,-1,40,100,-1,110,-1,-1,-1};
+    Node *root = createGTTree(arr);
+    return 0;
+}
